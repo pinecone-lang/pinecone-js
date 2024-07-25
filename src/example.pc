@@ -1,0 +1,6 @@
+// this is a comment and will be ignored
+
+title: string = "Some Title" // you can also place comments here
+version: string = "1.0.0"
+someInt: int = 0
+someFloat: float = 0.15

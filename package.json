@@ -1,0 +1,30 @@
+{
+  "name": "@pinecone-lang/pinecone-js",
+  "version": "1.0.0",
+  "description": "JavaScript parser for pinecone (.pc) files",
+  "main": "dist/index.js",
+  "scripts": {
+    "publish": "npm publish --access public",
+    "build": "node scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinecone-lang/pinecone-js.git"
+  },
+  "keywords": [
+    "parser"
+  ],
+  "author": "pinecone-lang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinecone-lang/pinecone-js/issues"
+  },
+  "homepage": "https://github.com/pinecone-lang/pinecone-js#readme",
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "esbuild-plugin-tsc": "^0.4.0"
+  },
+  "dependencies": {
+    "fs-jetpack": "^5.1.0"
+  }
+}
