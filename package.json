@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "publish": "npm publish --access public",
-    "build": "node scripts/build.js"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,6 @@
   },
   "homepage": "https://github.com/pinecone-lang/pinecone-js#readme",
   "devDependencies": {
-    "esbuild": "^0.23.0",
-    "esbuild-plugin-tsc": "^0.4.0"
-  },
-  "dependencies": {
-    "fs-jetpack": "^5.1.0"
+    "@types/node": "^20.14.12"
   }
 }

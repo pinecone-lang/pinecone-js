@@ -1,4 +1,4 @@
-import jetpack from "fs-jetpack";
+import fs from "fs";
 
 function parseValue(isArray: boolean, type: string, value: string): { value?: string | number | boolean | any[], typeError: boolean } {
     let parsedValue: string | number | boolean | any[];
@@ -69,11 +69,10 @@ function parse(x: string, options: { readFile: boolean } = { readFile: true }): 
     let content: string = x;
 
     if (options.readFile) {
-        const path = jetpack.path(x);
-        const result = jetpack.read(path);
+        const result = fs.readFileSync(x, "utf-8");
 
         if (!result)
-            throw new Error(`File not found: ${jetpack.path(x)}`);
+            throw new Error(`File not found: ${x}`);
 
         content = result;
     }

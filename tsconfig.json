@@ -1,8 +1,18 @@
 {
     "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "lib": ["ES2023"],
         "strict": true,
-        "lib": ["ES2022", "DOM"],
-        "esModuleInterop": true
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "removeComments": true,
+        "downlevelIteration": false,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "./dist"
     },
-    "exclude": ["node_modules", "dist"]
+    "include": ["./src/**/*"],
+    "exclude": ["./node_modules", "./dist"]
 }
