@@ -101,7 +101,7 @@ function parse(x: string, options: { readFile: boolean } = { readFile: true }): 
             const char = line[i2];
             const nextChar = line[i2 + 1];
 
-            if (char == "/" && nextChar == "/") {
+            if (char == "/" && nextChar == "/" && !isString) {
                 isComment = true;
                 break;
             }
@@ -112,12 +112,12 @@ function parse(x: string, options: { readFile: boolean } = { readFile: true }): 
             if (char == " " && !isString)
                 continue;
 
-            if (char == ":") {
+            if (char == ":" && !isString) {
                 iterationState = "type";
                 continue;
             }
 
-            if (char == "=") {
+            if (char == "=" && !isString) {
                 iterationState = "value";
                 continue;
             }
@@ -143,6 +143,9 @@ function parse(x: string, options: { readFile: boolean } = { readFile: true }): 
 
         if (isComment && type.length < 1)
             continue;
+
+        if (type !== "string" && type !== "boolean" && type !== "int" && type !== "float")
+            throw new Error(`Unknown type "${type}" on line ${i + 1}`);
 
         const parseResult = parseValue(isArray, type, value);
 
