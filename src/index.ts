@@ -37,14 +37,14 @@ function parseValue(isArray: boolean, type: string, value: string): { value?: st
             case "int":
                 parsedValue = parseInt(value);
     
-                if (Number.isNaN(value))
+                if (Number.isNaN(parsedValue))
                     return { typeError: true };
     
                 break;
             case "float":
                 parsedValue = parseFloat(value);
     
-                if (Number.isNaN(value))
+                if (Number.isNaN(parsedValue))
                     return { typeError: true };
     
                 break;

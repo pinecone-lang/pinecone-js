@@ -1,4 +1,6 @@
 src/
 scripts/
 Build.bat
+Publish.bat
 tsconfig.json
+.gitignore
